@@ -19,7 +19,9 @@ export default {
       this.$refs.fileInput.click()
     },
     handleInputChange(event) {
-      this.$emit('raise-file-picked', event.target.files[0])
+      if (event.target.files) {
+        this.$emit('raise-file-picked', event.target.files[0])
+      }
     }
   }
 }

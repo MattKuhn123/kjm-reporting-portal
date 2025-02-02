@@ -34,6 +34,7 @@ import { storeToRefs } from 'pinia'
         <RouterLink v-if="text" to="/review">Continue</RouterLink>
         <p v-if="error" class="orange">An error occured. Please try again. <br> {{ error }}</p>
       </nav>
+      <p v-if="text"><p>Successfully parsed:</p><code>{{ text }}</code></p>
     </InstructionItem>
   </form>
   
@@ -68,16 +69,12 @@ export default {
       const reader = new FileReader()
       reader.onload = async (e) => {
         const data = reader.result.replace("data:image/jpeg;base64,", "")
-        
         try {
-          // const key = ""
-          // const response = await axios.post(`https://vision.googleapis.com/v1/images:annotate?key=${key}`, {
-          //   requests: [{ image: { content: data }, features: [ { type: "DOCUMENT_TEXT_DETECTION" } ]}]
-          // })
+          const response = await axios.post(`https://ry8kes9z1f.execute-api.us-east-1.amazonaws.com/kjm-reporting-portal-ocr`, {
+            data
+          })
 
-          this.text = "something"
-          // this.text = response.data.responses[0].fullTextAnnotation.text
-          // console.log(response)
+          this.text = response.data.responses[0].fullTextAnnotation.text
 
           // TODO!!! Maybe the most important thing
           store.date = new Date().toISOString().slice(0, 10);
