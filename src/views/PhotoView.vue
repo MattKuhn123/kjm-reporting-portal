@@ -22,15 +22,14 @@ import StartIcon from '../components/icons/IconStart.vue'
       </div>
     </InstructionItem>
   
-    <hr />
-  
     <InstructionItem>
       <template #icon>
         <StartIcon />
       </template>
       <template #heading>Continue</template>
   
-      <nav>
+      <nav class="continuity">
+        <RouterLink to="/">Back</RouterLink>
         <span v-if="!confirm"><i>Please confirm to continue</i></span>
         <RouterLink v-if="confirm" to="/upload">Continue</RouterLink>
       </nav>

@@ -5,7 +5,7 @@ defineProps({
 </script>
 
 <template>
-  <button type="button" class="orange padded-12-16" @click="simulateClick">
+  <button type="button" class="padded-12-16" @click="simulateClick">
     Upload
   </button>
   <input ref="fileInput" :accept="fileTypes" name="file" type="file" @change="handleInputChange" hidden/>
@@ -16,7 +16,7 @@ export default {
   emits: ['raise-file-picked'],
   methods: {
     simulateClick() {
-      this.$refs.fileInput.click();
+      this.$refs.fileInput.click()
     },
     handleInputChange(event) {
       this.$emit('raise-file-picked', event.target.files[0])
@@ -29,5 +29,7 @@ export default {
 button {
   width: 100%;
   background-color: white;
+  border: 2px var(--color-primary) solid;
+  border-radius: 2px;
 }
 </style>

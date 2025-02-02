@@ -1,5 +1,9 @@
 @import './base.css';
 
+:root {
+  --color-primary: rgb(255, 186, 25);
+}
+
 #app {
   max-width: 1280px;
   margin: 0 auto;
@@ -10,7 +14,7 @@
 a,
 .orange {
   text-decoration: none;
-  color: rgb(255, 186, 25);
+  color: var(--color-primary);
   transition: 0.4s;
   padding: 3px;
 }
@@ -38,4 +42,36 @@ input[type="submit"].padded-12-16 {
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
   }
+}
+
+fieldset {
+  margin: 10px 0px 10px 0px;
+  border-style: solid;
+  border-color: var(--color-primary);
+  border-radius: 5px;
+  box-shadow: 0px 1px 1px var(--color-primary);
+}
+
+input[type=checkbox],
+input[type=radio] {
+  accent-color: var(--color-primary);
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: unset;
+  box-shadow: 0px 2px 2px var(--color-primary);
+}
+
+input,
+textarea {
+  margin: 5px 0px 10px 0px;
+  padding: 5px;
+  border-style: solid;
+  border-color: var(--color-primary);
+}
+
+nav.continuity {
+  display: flex;
+  gap: 10px;
 }

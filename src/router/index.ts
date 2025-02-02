@@ -19,6 +19,16 @@ const router = createRouter({
       name: 'upload',
       component: () => import('../views/UploadView.vue'),
     },
+    {
+      path: '/review',
+      name: 'review',
+      component: () => import('../views/ReviewView.vue'),
+    },
+    {
+      path: '/complete',
+      name: 'complete',
+      component: () => import('../views/CompleteView.vue'),
+    },
   ],
 })
 

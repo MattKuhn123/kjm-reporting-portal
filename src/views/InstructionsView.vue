@@ -39,24 +39,12 @@ import UploadIcon from '../components/icons/IconUpload.vue'
 
     <InstructionItem>
       <template #icon>
-        <EditIcon />
-      </template>
-      <template #heading>Edit</template>
-
-      Edit if necessary.
-    </InstructionItem>
-
-    <InstructionItem>
-      <template #icon>
         <CompleteIcon />
       </template>
       <template #heading>Complete</template>
 
       Approve & complete!
     </InstructionItem>
-    
-    <hr />
-
     <InstructionItem>
       <template #icon>
         <StartIcon />
