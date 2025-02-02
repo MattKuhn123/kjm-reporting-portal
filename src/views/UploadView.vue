@@ -95,8 +95,8 @@ export default {
         }
       }
 
-      reader.onError = (e) => {
-        this.error = err
+      reader.onerror = (e) => {
+        this.error = e
         this.loading = false
       }
 
